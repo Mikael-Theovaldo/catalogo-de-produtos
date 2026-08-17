@@ -120,7 +120,7 @@ function renderProducts() {
   els.grid.innerHTML = list
     .map(
       (product) => `
-    <article class="product-card">
+    <article class="product-card ${product.id === 'p14' ? 'product-card-fone' : ''}">
       ${product.tag ? `<span class="product-tag" data-tag="${product.tag.toLowerCase()}">${product.tag}</span>` : ""}
       <div class="product-media">
         <button class="product-image-button" type="button" data-id="${product.id}" aria-label="Ampliar imagem de ${product.name}">
