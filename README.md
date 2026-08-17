@@ -50,7 +50,4 @@ pediu). Para ligar de verdade:
 4. Se o vendedor não responder a tempo, o backend repassa a conversa e
    avisa o cliente automaticamente.
 
-Fica como exercício natural de evolução do projeto: registrar o pedido no
-backend no momento em que o cliente clica em "Finalizar pelo WhatsApp"
-(por exemplo, chamando `POST /orders` do backend antes de abrir o link do
-WhatsApp).
+
