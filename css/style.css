@@ -344,9 +344,9 @@ button { font-family: inherit; cursor: pointer; border: none; }
   top: 10px;
   left: 10px;
   z-index: 3;
-  min-width: clamp(58px, 6vw, 96px);
-  height: clamp(26px, 3vw, 42px);
-  padding: 0 12px;
+  width: 84px;
+  height: 30px;
+  padding: 0 10px;
   background: linear-gradient(135deg, #dfffb0, #74d89b 45%, #1ebd8b 100%);
   color: #0d261d;
   display: flex;
@@ -354,7 +354,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   justify-content: center;
   text-align: center;
   font-weight: 900;
-  font-size: clamp(0.46rem, 1vw, 0.74rem);
+  font-size: 0.62rem;
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: uppercase;
@@ -389,10 +389,10 @@ button { font-family: inherit; cursor: pointer; border: none; }
   .product-tag[data-tag="promoção"] {
     top: 8px;
     left: 8px;
-    min-width: 52px;
-    height: 24px;
+    width: 68px;
+    height: 28px;
     padding: 0 8px;
-    font-size: 0.34rem;
+    font-size: 0.46rem;
     letter-spacing: 0.06em;
     border-width: 2px;
     border-radius: 10px 10px 10px 0;
