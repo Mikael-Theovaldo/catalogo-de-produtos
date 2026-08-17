@@ -29,6 +29,7 @@ const els = {
   productModal: document.getElementById("product-modal"),
   productModalImage: document.getElementById("product-modal-image"),
   productModalTitle: document.getElementById("product-modal-title"),
+  productModalDescription: document.getElementById("product-modal-description"),
   productModalClose: document.getElementById("product-modal-close"),
   backToTop: document.getElementById("back-to-top")
 };
@@ -138,6 +139,7 @@ function openProductModal(productId) {
   els.productModalImage.src = product.image;
   els.productModalImage.alt = product.name;
   els.productModalTitle.textContent = product.name;
+  els.productModalDescription.textContent = product.description;
   els.productModal.classList.add("is-open");
   els.productModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
