@@ -14,6 +14,12 @@
 const els = {
   grid: document.getElementById("product-grid"),
   filters: document.getElementById("category-filters"),
+  sortFilters: document.getElementById("sort-filters"),
+  filtersToggle: document.getElementById("filters-toggle"),
+  filtersDrawer: document.getElementById("filters-drawer"),
+  filtersClose: document.getElementById("filters-close"),
+  filtersOverlay: document.getElementById("filters-overlay"),
+  applyFilters: document.getElementById("apply-filters"),
   cartCount: document.getElementById("cart-count"),
   cartDrawer: document.getElementById("cart-drawer"),
   cartItems: document.getElementById("cart-items"),
@@ -40,6 +46,7 @@ els.instagramTop.href = window.SocialLinks.buildInstagramLink();
 els.instagramCart.href = window.SocialLinks.buildInstagramLink();
 
 let activeCategory = "Todos";
+let activeSort = "featured";
 
 function getCategories() {
   const set = new Set(window.PRODUCTS.map((p) => p.category));
@@ -58,11 +65,57 @@ function renderFilters() {
     .join("");
 }
 
+function renderSortFilters() {
+  const sortOptions = [
+    { id: "featured", label: "Destaque" },
+    { id: "cheapest", label: "Mais barato" },
+    { id: "expensive", label: "Mais caro" },
+    { id: "bestseller", label: "Mais vendido" },
+    { id: "promotion", label: "Promoção" }
+  ];
+
+  const buttons = document.querySelectorAll(".sort-chip");
+  buttons.forEach((btn) => {
+    if (btn.dataset.sort === activeSort) {
+      btn.setAttribute("data-active", "true");
+    } else {
+      btn.setAttribute("data-active", "false");
+    }
+  });
+}
+
 function renderProducts() {
-  const list =
+  let list =
     activeCategory === "Todos"
-      ? window.PRODUCTS
+      ? [...window.PRODUCTS]
       : window.PRODUCTS.filter((p) => p.category === activeCategory);
+
+  // Aplicar ordenação
+  switch (activeSort) {
+    case "cheapest":
+      list.sort((a, b) => a.price - b.price);
+      break;
+    case "expensive":
+      list.sort((a, b) => b.price - a.price);
+      break;
+    case "promotion":
+      list.sort((a, b) => {
+        // Produtos com promoção primeiro, depois por preço
+        if (a.isPromotion === b.isPromotion) {
+          return a.price - b.price;
+        }
+        return a.isPromotion ? -1 : 1;
+      });
+      break;
+    case "featured":
+    default:
+      // Manter ordem original (produtos com tag de destaque primeiro)
+      list.sort((a, b) => {
+        if (a.tag && !b.tag) return -1;
+        if (!a.tag && b.tag) return 1;
+        return 0;
+      });
+  }
 
   els.grid.innerHTML = list
     .map(
@@ -156,6 +209,18 @@ function updateBackToTopButton() {
   els.backToTop.classList.toggle("is-visible", shouldShow);
 }
 
+function openFiltersPanel() {
+  els.filtersDrawer.classList.add("is-open");
+  els.filtersOverlay.classList.add("is-open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeFiltersPanel() {
+  els.filtersDrawer.classList.remove("is-open");
+  els.filtersOverlay.classList.remove("is-open");
+  document.body.style.overflow = "";
+}
+
 // ---- Eventos ---------------------------------------------------------
 
 els.filters.addEventListener("click", (e) => {
@@ -164,6 +229,22 @@ els.filters.addEventListener("click", (e) => {
   activeCategory = btn.dataset.cat;
   renderFilters();
   renderProducts();
+});
+
+els.sortFilters.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-sort]");
+  if (!btn) return;
+  activeSort = btn.dataset.sort;
+  renderSortFilters();
+  renderProducts();
+});
+
+els.filtersToggle.addEventListener("click", openFiltersPanel);
+els.filtersClose.addEventListener("click", closeFiltersPanel);
+els.filtersOverlay.addEventListener("click", closeFiltersPanel);
+
+els.applyFilters.addEventListener("click", () => {
+  closeFiltersPanel();
 });
 
 els.grid.addEventListener("click", (e) => {
@@ -276,5 +357,6 @@ Cart.onChange(renderCart);
 
 // ---- Inicialização -----------------------------------------------------
 renderFilters();
+renderSortFilters();
 renderProducts();
 renderCart();
