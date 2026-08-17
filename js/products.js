@@ -23,10 +23,10 @@ const PRODUCTS = [
     price: 44.90,
     tag: "Mais vendido",
     image: "image/carregador-MagSafe.webp",
-    description: "Cabo magnético USB-C com conexão segura e auto-alineamento. Carregamento rápido de alta performance com construção durável e flexível.",
-    features: ["Conexão magnética", "Carregamento rápido", "Durável e flexível", "Compatível com USB-C"]
+    description: "Cabo magnético com encaixe seguro para iPhone e outros dispositivos compatíveis. A conexão se alinha automaticamente, oferecendo carregamento rápido e estável com acabamento durável e flexível.",
+    features: ["Conexão magnética", "Carregamento rápido", "Alta durabilidade", "Compatível com USB-C"]
   },
-  
+
   {
     id: "p02",
     name: "Cooler para notebook",
@@ -34,8 +34,8 @@ const PRODUCTS = [
     price: 19.90,
     tag: null,
     image: "image/cooler-para-notebook.webp",
-    description: "Resfriador portátil com duplos ventiladores de alta performance. Reduz temperatura do notebook em até 15°C e funciona silenciosamente com suporte em altura ajustável.",
-    features: ["Duplos ventiladores", "Reduz até 15°C", "Suporte ajustável", "Operação silenciosa"]
+    description: "Resfriador portátil com dois ventiladores de alta vazão para reduzir a temperatura do notebook durante o uso intensivo. Possui suporte ajustável e operação tranquila, ideal para trabalho e estudos.",
+    features: ["2 ventiladores", "Reduz temperatura", "Suporte ajustável", "Funcionamento silencioso"]
   },
 
   {
@@ -45,8 +45,8 @@ const PRODUCTS = [
     price: 65.00,
     tag: null,
     image: "image/interfoneK06.webp",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    description: "Interfone para motociclistas com comunicação em duas vias e áudio nítido, perfeito para rotas em dupla ou conversa em movimento. Possui alcance de até 2 km e resistência para uso em condições externas.",
+    features: ["Comunicação 2 vias", "Alcance até 2 km", "Áudio cristalino", "Resistente à água"]
   },
 
   {
@@ -56,8 +56,8 @@ const PRODUCTS = [
     price: 19.90,
     tag: "novidade",
     image: "image/tripe-suporte-para-celular.jpg",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    description: "Suporte versátil para celular com base estável, ajuste de altura e ângulo para gravações, videoconferências e uso diário. O design compacto facilita a mobilidade e melhora a ergonomia na mesa.",
+    features: ["Base estável", "Altura ajustável", "Ângulo flexível", "Ideal para celular"]
   },
 
   {
@@ -66,9 +66,9 @@ const PRODUCTS = [
     category: "Carregadores",
     price: 24.99,
     tag: "promoção",
-    image: "image/fonteUSB-C-20w.webp",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    image: "image/fonte-apple-20w.webp",
+    description: "Fonte compacta com tecnologia USB-C para carregamento rápido em iPhones, iPads e outros dispositivos compatíveis. Leve e prática, ideal para uso em casa, trabalho ou viagem.",
+    features: ["USB-C Power Delivery", "Carregamento rápido", "Compacta", "Compatível com Apple"]
   },
 
   {
@@ -78,8 +78,8 @@ const PRODUCTS = [
     price: 37.99,
     tag: "novidade",
     image: "image/lampadaDobravel-Oasis.jpeg",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    description: "Lâmpada dobrável com estrutura articulada e foco ajustável, ideal para iluminar bancadas, mesas ou espaços de trabalho. Seu design compacto oferece praticidade e iluminação eficiente.",
+    features: ["Estrutura dobrável", "Feixe ajustável", "Leve e prática", "Iluminação funcional"]
   },
 
   {
@@ -88,20 +88,20 @@ const PRODUCTS = [
     category: "Carregadores",
     price: 35.00,
     tag: "popular",
-    image: "image/carregador-iphoneProMax.jpg",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    image: "image/carregador-iphonePromax.jpg",
+    description: "Carregador específico para iPhone 15 Pro Max, pensado para entrega de energia eficiente e segura. A estrutura compacta facilita o uso diário sem ocupar espaço na mochila ou mesa.",
+    features: ["Compatível com iPhone 15 Pro Max", "Carregamento eficiente", "Design compacto", "Uso diário"]
   },
 
   {
     id: "p08",
     name: "Carregador Apple iphone X 12W",
     category: "Carregadores",
-    price: 29,
+    price: 25.00,
     tag: null,
-    image: "image/carregador-iphoneX-12W.jpg",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    image: "image/carregador-IphoneX-12W.jpg",
+    description: "Adaptador Apple de 12W para carregamento estável do iPhone X e modelos compatíveis. Oferece energia confiável e desempenho ideal para recarga em casa, escritório ou viagem.",
+    features: ["12W de potência", "Compatível com iPhone X", "Carregamento estável", "Uso versátil"]
   },
 
   {
@@ -111,19 +111,19 @@ const PRODUCTS = [
     price: 35.00,
     tag: "popular",
     image: "image/carregador-iphone14ProMax.png",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    description: "Carregador pensado para iPhone 14 Pro Max, com entrega rápida de energia e segurança de uso. Seu design prático combina eficiência com uma aparência moderna e funcional.",
+    features: ["Compatível com iPhone 14 Pro Max", "Carregamento rápido", "Segurança de uso", "Design moderno"]
   },
 
   {
     id: "p10",
-    name: "Carregador AXiaomi 67W",
+    name: "Carregador Xiaomi 67W",
     category: "Carregadores",
     price: 35.00,
     tag: "Mais Vendido",
-    image: "image/carregador-xiaomi67W.jpg",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    image: "image/carregador-xiaomi67w.jpg",
+    description: "Carregador de alta potência para dispositivos Xiaomi e compatíveis, com carga rápida e eficiente. Ideal para usuários que precisam de recarga mais ágil no dia a dia ou em deslocamentos.",
+    features: ["67W de potência", "Carga rápida", "Compatível com Xiaomi", "Alta eficiência"]
   },
 
   {
@@ -131,46 +131,44 @@ const PRODUCTS = [
     name: "Fonte 45W USB-C",
     category: "Carregadores",
     price: 25.00,
-    tag: "popular",
+    tag: "promoção",
     image: "image/fonte-45w-USB-C.jpg",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    description: "Fonte USB-C de 45W com carregamento rápido para smartphones, tablets e notebooks leves. Compacta e eficiente, oferece energia confiável para uso em casa, escritório ou viagem.",
+    features: ["45W USB-C", "Carregamento rápido", "Leve e compacta", "Compatível com vários dispositivos"]
   },
+
   {
     id: "p12",
     name: "Isqueiro Motocicleta 45V",
     category: "Acessórios",
     price: 29.00,
-    tag: "popular",
+    tag: null,
     image: "image/isqueiro-para-moto.webp",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    description: "Isqueiro de motocicleta com encaixe robusto e design resistente para uso diário em viagens e deslocamentos. Seu acabamento funcional combina praticidade, resistência e visual moderno.",
+    features: ["Para motocicleta", "Estrutura resistente", "Uso diário", "Design robusto"]
   },
 
   {
     id: "p13",
-    name: "cabo USB-C Apple 1m",
+    name: "Cabo USB-C Apple 1m",
     category: "Carregadores",
-    price: 15.50,
+    price: 14.99,
     tag: "promoção",
     image: "image/caboUSB-Capple.webp",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+    description: "Cabo USB-C para dispositivos Apple com 1 metro de extensão e boa flexibilidade. Perfeito para recarga e sincronização com excelente conectividade e acabamento de qualidade.",
+    features: ["1 metro de comprimento", "USB-C Apple", "Flexível", "Recarga e sincronização"]
   },
 
   {
     id: "p14",
-    name: "fone com fio",
+    name: "Fone com fio",
     category: "Fone/Áudio",
-    price: 5.99,
+    price: 4.99,
     tag: "promoção",
     image: "image/fone-generico.jpeg",
-    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
-    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
-  },
-  
-
-
+    description: "Fone com fio compacto com áudio simples e confortável para uso cotidiano. Ideal para ouvir música, fazer ligações e aproveitar conteúdo em casa, no trabalho ou em deslocamentos.",
+    features: ["Conexão com fio", "Som simples e claro", "Leve e confortável", "Uso diário"]
+  }
 ];
 
 // Disponibiliza o array para os outros scripts (main.js) sem precisar

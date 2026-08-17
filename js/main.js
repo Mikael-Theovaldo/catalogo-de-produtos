@@ -29,7 +29,8 @@ const els = {
   productModal: document.getElementById("product-modal"),
   productModalImage: document.getElementById("product-modal-image"),
   productModalTitle: document.getElementById("product-modal-title"),
-  productModalClose: document.getElementById("product-modal-close")
+  productModalClose: document.getElementById("product-modal-close"),
+  backToTop: document.getElementById("back-to-top")
 };
 
 // Links externos e gratuitos (sem API): apenas apontam para o perfil/contato.
@@ -66,7 +67,7 @@ function renderProducts() {
     .map(
       (product) => `
     <article class="product-card">
-      ${product.tag ? `<span class="product-tag">${product.tag}</span>` : ""}
+      ${product.tag ? `<span class="product-tag" data-tag="${product.tag.toLowerCase()}">${product.tag}</span>` : ""}
       <div class="product-media">
         <button class="product-image-button" type="button" data-id="${product.id}" aria-label="Ampliar imagem de ${product.name}">
           <img src="${product.image}" alt="${product.name}" loading="lazy" />
@@ -146,6 +147,11 @@ function closeProductModal() {
   els.productModal.classList.remove("is-open");
   els.productModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
+}
+
+function updateBackToTopButton() {
+  const shouldShow = window.scrollY > 420;
+  els.backToTop.classList.toggle("is-visible", shouldShow);
 }
 
 // ---- Eventos ---------------------------------------------------------
@@ -231,12 +237,16 @@ els.cartToggle.addEventListener("click", () => {
 });
 els.cartClose.addEventListener("click", closeCart);
 els.cartOverlay.addEventListener("click", closeCart);
+els.backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 els.productModalClose.addEventListener("click", closeProductModal);
 els.productModal.addEventListener("click", (e) => {
   if (e.target.closest("[data-close='true']")) {
     closeProductModal();
   }
 });
+window.addEventListener("scroll", updateBackToTopButton, { passive: true });
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && els.productModal.classList.contains("is-open")) {
     closeProductModal();
