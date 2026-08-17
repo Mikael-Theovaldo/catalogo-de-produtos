@@ -18,7 +18,7 @@
 const PRODUCTS = [
   {
     id: "p01",
-    name: "Cabo MagSafe",
+    name: "Cabo Apple MagSafe",
     category: "Carregadores",
     price: 44.90,
     tag: "Mais vendido",
@@ -30,7 +30,7 @@ const PRODUCTS = [
   {
     id: "p02",
     name: "Cooler para notebook",
-    category: "Acessórios",
+    category: "Computadores",
     price: 19.90,
     tag: null,
     image: "image/cooler-para-notebook.webp",
@@ -41,7 +41,7 @@ const PRODUCTS = [
   {
     id: "p03",
     name: "Interfone Helmet K06",
-    category: "Computadores",
+    category: "Fone/Áudio",
     price: 65.00,
     tag: null,
     image: "image/interfoneK06.webp",
@@ -49,7 +49,128 @@ const PRODUCTS = [
     features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
   },
 
+  {
+    id: "p04",
+    name: "Suporte tripé para celular",
+    category: "Acessórios",
+    price: 19.90,
+    tag: "novidade",
+    image: "image/tripe-suporte-para-celular.jpg",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+
+  {
+    id: "p05",
+    name: "Fonte Apple 20w",
+    category: "Carregadores",
+    price: 24.99,
+    tag: "promoção",
+    image: "image/fonteUSB-C-20w.webp",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+
+  {
+    id: "p06",
+    name: "Lâmpada Dobrável",
+    category: "Iluminação",
+    price: 37.99,
+    tag: "novidade",
+    image: "image/lampadaDobravel-Oasis.jpeg",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+
+  {
+    id: "p07",
+    name: "Carregador Apple iphone 15 Pro Max",
+    category: "Carregadores",
+    price: 35.00,
+    tag: "popular",
+    image: "image/carregador-iphoneProMax.jpg",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+
+  {
+    id: "p08",
+    name: "Carregador Apple iphone X 12W",
+    category: "Carregadores",
+    price: 29,
+    tag: null,
+    image: "image/carregador-iphoneX-12W.jpg",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+
+  {
+    id: "p09",
+    name: "Carregador Apple iphone 14 Pro Max",
+    category: "Carregadores",
+    price: 35.00,
+    tag: "popular",
+    image: "image/carregador-iphone14ProMax.png",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+
+  {
+    id: "p10",
+    name: "Carregador AXiaomi 67W",
+    category: "Carregadores",
+    price: 35.00,
+    tag: "Mais Vendido",
+    image: "image/carregador-xiaomi67W.jpg",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+
+  {
+    id: "p11",
+    name: "Fonte 45W USB-C",
+    category: "Carregadores",
+    price: 25.00,
+    tag: "popular",
+    image: "image/fonte-45w-USB-C.jpg",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+  {
+    id: "p12",
+    name: "Isqueiro Motocicleta 45V",
+    category: "Acessórios",
+    price: 29.00,
+    tag: "popular",
+    image: "image/isqueiro-para-moto.webp",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+
+  {
+    id: "p13",
+    name: "cabo USB-C Apple 1m",
+    category: "Carregadores",
+    price: 15.50,
+    tag: "promoção",
+    image: "image/caboUSB-Capple.webp",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
+
+  {
+    id: "p14",
+    name: "fone com fio",
+    category: "Fone/Áudio",
+    price: 5.99,
+    tag: "promoção",
+    image: "image/fone-generico.jpeg",
+    description: "Sistema de comunicação profissional com áudio cristalino em duas vias. Ideal para motociclistas, ciclistas e esportistas com alcance de até 2km e bateria de longa duração.",
+    features: ["Comunicação 2 vias", "Alcance até 2km", "Bateria de longa duração", "Design à prova d'água"]
+  },
   
+
+
 ];
 
 // Disponibiliza o array para os outros scripts (main.js) sem precisar

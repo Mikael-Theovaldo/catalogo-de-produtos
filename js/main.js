@@ -25,7 +25,11 @@ const els = {
   emptyState: document.getElementById("cart-empty"),
   instagramTop: document.getElementById("instagram-link"),
   instagramCart: document.getElementById("instagram-cart-link"),
-  cartToast: document.getElementById("cart-toast")
+  cartToast: document.getElementById("cart-toast"),
+  productModal: document.getElementById("product-modal"),
+  productModalImage: document.getElementById("product-modal-image"),
+  productModalTitle: document.getElementById("product-modal-title"),
+  productModalClose: document.getElementById("product-modal-close")
 };
 
 // Links externos e gratuitos (sem API): apenas apontam para o perfil/contato.
@@ -64,7 +68,9 @@ function renderProducts() {
     <article class="product-card">
       ${product.tag ? `<span class="product-tag">${product.tag}</span>` : ""}
       <div class="product-media">
-        <img src="${product.image}" alt="${product.name}" loading="lazy" />
+        <button class="product-image-button" type="button" data-id="${product.id}" aria-label="Ampliar imagem de ${product.name}">
+          <img src="${product.image}" alt="${product.name}" loading="lazy" />
+        </button>
       </div>
       <div class="product-body">
         <span class="product-category">${product.category}</span>
@@ -124,6 +130,24 @@ function closeCart() {
   els.cartOverlay.classList.remove("is-open");
 }
 
+function openProductModal(productId) {
+  const product = window.PRODUCTS.find((item) => item.id === productId);
+  if (!product) return;
+
+  els.productModalImage.src = product.image;
+  els.productModalImage.alt = product.name;
+  els.productModalTitle.textContent = product.name;
+  els.productModal.classList.add("is-open");
+  els.productModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function closeProductModal() {
+  els.productModal.classList.remove("is-open");
+  els.productModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
 // ---- Eventos ---------------------------------------------------------
 
 els.filters.addEventListener("click", (e) => {
@@ -135,7 +159,14 @@ els.filters.addEventListener("click", (e) => {
 });
 
 els.grid.addEventListener("click", (e) => {
+  const imageButton = e.target.closest(".product-image-button");
   const btn = e.target.closest(".btn-add");
+
+  if (imageButton) {
+    openProductModal(imageButton.dataset.id);
+    return;
+  }
+
   if (!btn) return;
   const product = window.PRODUCTS.find((p) => p.id === btn.dataset.id);
   if (product) {
@@ -200,6 +231,17 @@ els.cartToggle.addEventListener("click", () => {
 });
 els.cartClose.addEventListener("click", closeCart);
 els.cartOverlay.addEventListener("click", closeCart);
+els.productModalClose.addEventListener("click", closeProductModal);
+els.productModal.addEventListener("click", (e) => {
+  if (e.target.closest("[data-close='true']")) {
+    closeProductModal();
+  }
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && els.productModal.classList.contains("is-open")) {
+    closeProductModal();
+  }
+});
 
 els.whatsappBtn.addEventListener("click", () => {
   const items = Cart.getItems();
