@@ -1,53 +1,132 @@
-# Catálogo de Produtos + Automação de Vendedores (projeto de aprendizado)
+# W&M Shop — Catálogo de Produtos
 
-Este projeto tem **duas partes independentes**:
+Este projeto nasceu como uma ideia prática: criar um catálogo de produtos para a loja, com visual limpo, fácil de usar e preparado para vender pelo WhatsApp ou Instagram.
 
-```
+A proposta é simples, mas muito útil: ter uma página onde os clientes vejam os itens, entendam o que é cada produto e possam pedir diretamente com o vendedor, sem complicar o processo.
+
+Este projeto também serve como um espaço de estudo e evolução contínua. A ideia é começar simples, usar no dia a dia da loja, aprender ao longo do tempo e melhorar o sistema conforme o negócio cresce.
+
+## Objetivo principal
+
+- Apresentar produtos de forma organizada e visualmente agradável
+- Facilitar a compra por contato direto com a loja
+- Servir como base para futuras melhorias e aprendizado em desenvolvimento web
+- Evoluir com o tempo junto com a loja e com meus estudos
+
+## Visão do projeto
+
+Este site foi pensado como um catálogo vivo, que pode crescer conforme a loja cresce.
+
+No começo, ele é estático e simples. Mais tarde, pode virar:
+
+- sistema com painel administrativo
+- cadastro e edição de produtos
+- controle de estoque
+- pedidos por WhatsApp
+- integração com banco de dados
+- autenticação e gestão de vendedores
+- área de administração para a loja
+
+## Como o projeto funciona hoje
+
+A versão atual é um catálogo frontend com:
+
+- exibição de produtos em grid
+- categorias
+- carrinho de compras no navegador
+- botão para finalizar pedido no WhatsApp
+- imagens e descrições dos produtos
+- filtro por categoria
+
+Os dados dos produtos estão em um arquivo JavaScript centralizado, o que facilita adicionar, remover ou atualizar itens sem precisar mexer em várias partes do código.
+
+## Estrutura do projeto
+
+```bash
 catalogo-produtos/
-├── frontend/              <- a landing page do catálogo (o que o cliente vê)
-│   ├── index.html
-│   ├── css/style.css
-│   └── js/
-│       ├── products.js     <- dados dos produtos (sem banco de dados)
-│       ├── cart.js         <- estado do carrinho
-│       ├── whatsapp.js     <- monta o link "finalizar pelo WhatsApp"
-│       └── main.js         <- desenha tudo na tela e liga os eventos
-│
-└── backend-automation/     <- automação de rodízio de vendedores (Node/Express)
-    └── (ver README.md dentro da pasta para detalhes)
+├── index.html
+├── README.md
+├── css/
+│   └── style.css
+├── js/
+│   ├── cart.js
+│   ├── main.js
+│   ├── products.js
+│   ├── social.js
+│   └── whatsapp.js
+├── image/
+│   └── imagens dos produtos
+├── backend-automation/
+│   ├── README.md
+│   ├── package.json
+│   └── src/
+└── ...
 ```
 
-## 1. Frontend (a landing page em si)
+## Como usar
 
-- **Não tem banco de dados** — os produtos ficam num array em `js/products.js`.
-- O carrinho é só um estado em memória do navegador (some se recarregar a página).
-- Ao clicar em "Finalizar pelo WhatsApp", o site monta uma mensagem com o
-  resumo do pedido e abre `https://wa.me/...` — quem envia de fato é o
-  próprio cliente, dentro do WhatsApp. **Nada é automático nessa parte.**
+1. Abra o arquivo `index.html` em um navegador.
+2. O catálogo já estará funcionando.
+3. Para adicionar ou alterar produtos, edite o arquivo `js/products.js`.
+4. Para trocar imagens, coloque os arquivos em `image/` e ajuste os caminhos no array de produtos.
 
-Para visualizar: basta abrir `frontend/index.html` no navegador
-(não precisa de servidor).
+## Como vender com esse projeto
 
-## 2. Backend automation (rodízio de vendedores)
+A ideia é usar esse catálogo como ponte entre a loja e o cliente.
 
-Simula a regra: *"se o vendedor não responder em 15 minutos, o pedido vai
-para outro vendedor e o cliente é avisado"*. Isso já **não é mais front-end
-puro** — precisa de um servidor rodando e, para funcionar de verdade, da
-API oficial do WhatsApp (Cloud API da Meta). Veja
-`backend-automation/README.md` para a explicação completa, incluindo por
-que isso não dá pra fazer só com o WhatsApp comum.
+O cliente entra na página, vê os produtos, seleciona itens e pode finalizar no WhatsApp com a mensagem automática já montada. Isso torna o processo mais fácil e rápido.
 
-## Como as duas partes se conectam (num cenário real)
+## Importante sobre o escopo
 
-Hoje elas são independentes (o frontend é 100% ilustrativo, como você
-pediu). Para ligar de verdade:
+Este é um projeto em evolução. Hoje ele funciona como uma vitrine digital e uma ferramenta de apoio à loja. A partir daqui, novas ideias podem ser implementadas conforme a necessidade real do negócio.
 
-1. O cliente finaliza o pedido pelo WhatsApp normalmente (via `wa.me`).
-2. Quando essa mensagem chega no número business do vendedor, a Cloud API
-   dispara um Webhook para o seu backend.
-3. O backend registra o pedido (`ordersStore.js`) e liga o timer de 15 min
-   (`reassignmentService.js`).
-4. Se o vendedor não responder a tempo, o backend repassa a conversa e
-   avisa o cliente automaticamente.
+A proposta não é fazer tudo de uma vez, e sim aprender construindo de forma organizada.
 
+## Roadmap de evolução
+
+### Fase 1 — catálogo básico
+- [x] listagem de produtos
+- [x] imagens e descrições
+- [x] filtro por categoria
+- [x] carrinho de compras
+- [x] compra por WhatsApp
+
+### Fase 2 — melhorias da loja
+- [ ] painel para gerenciar produtos
+- [ ] edição fácil de preços e descrições
+- [ ] controle de estoque
+- [ ] melhor organização visual
+- [ ] nova identidade visual e branding
+
+### Fase 3 — automação e gestão
+- [ ] backend para armazenar pedidos
+- [ ] banco de dados
+- [ ] cadastro de clientes
+- [ ] integração com WhatsApp/Instagram
+- [ ] gerenciamento de vendedores e atendimento
+
+### Fase 4 — crescimento profissional
+- [ ] deploy para internet
+- [ ] domínio e hospedagem
+- [ ] analytics e métricas
+- [ ] melhor UX para mobile
+- [ ] refatoração do código e organização para manutenção
+
+## Filosofia do projeto
+
+Este repositório representa mais do que um catálogo de produtos. Ele representa uma base para aprender desenvolvimento web na prática, criar algo útil para a loja e continuar melhorando com o tempo.
+
+Cada mudança aqui pode ser vista como parte do processo de estudo e evolução do empreendedor e do desenvolvedor.
+
+## Conclusão
+
+O objetivo deste projeto é simples, mas forte: transformar a loja em uma experiência mais profissional, moderna e fácil de vender.
+
+Com o tempo, esse catálogo pode crescer, virar uma ferramenta mais completa e se tornar uma parte importante do negócio.
+
+O mais importante é manter o foco em evolução contínua: aprender, testar, ajustar e melhorar.
+
+---
+
+Desenvolvido com foco em aprendizado, produtividade e uso real na loja.
 
