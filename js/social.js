@@ -35,9 +35,9 @@ function buildInstagramDirectMessage(cartItems, total, username = INSTAGRAM_CONF
   lines.push(`Total estimado: ${total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`);
   lines.push("");
   lines.push("Podem confirmar disponibilidade e forma de pagamento/entrega?");
+
   const message = lines.join("\n");
 
-  // Copia a mensagem para a área de transferência e abre o Direct do Instagram.
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(message).catch(() => {
       console.log("Mensagem:", message);
@@ -46,7 +46,8 @@ function buildInstagramDirectMessage(cartItems, total, username = INSTAGRAM_CONF
     console.log("Mensagem:", message);
   }
 
-  return `https://ig.me/m/${normalizedUsername}`;
+  const encodedMessage = encodeURIComponent(message);
+  return `https://ig.me/m/${normalizedUsername}?text=${encodedMessage}`;
 }
 
 window.SocialLinks = { INSTAGRAM_CONFIG, buildInstagramLink, buildInstagramDirectMessage };

@@ -209,12 +209,13 @@ els.whatsappBtn.addEventListener("click", () => {
   window.open(link, "_blank");
 });
 
-els.instagramCart.addEventListener("click", () => {
+els.instagramCart.addEventListener("click", (event) => {
+  event.preventDefault();
   const items = Cart.getItems();
   if (items.length === 0) return;
   const total = Cart.getTotalPrice();
   const link = window.SocialLinks.buildInstagramDirectMessage(items, total);
-  window.open(link, "_blank");
+  window.open(link, "_blank", "noopener,noreferrer");
 });
 
 Cart.onChange(renderCart);
