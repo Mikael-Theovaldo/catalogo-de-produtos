@@ -350,7 +350,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   top: 10px;
   left: 10px;
   z-index: 3;
-  width: 84px;
+  width: 82px;
   height: 30px;
   padding: 0 10px;
   background: linear-gradient(135deg, #dfffb0, #74d89b 45%, #1ebd8b 100%);
@@ -393,29 +393,29 @@ button { font-family: inherit; cursor: pointer; border: none; }
 
 @media (max-width: 640px) {
   .product-tag {
-    min-width: 68px;
-    height: 26px;
-    padding: 0 8px;
-    font-size: 0.52rem;
+    min-width: 74px;
+    height: 28px;
+    padding: 0 10px;
+    font-size: 0.62rem;
   }
 
   .product-tag[data-tag="promoção"] {
-    top: 8px;
-    left: 8px;
-    width: 76px;
-    height: 28px;
-    padding: 0 8px;
-    font-size: 0.54rem;
-    letter-spacing: 0.06em;
+    top: 10px;
+    left: 10px;
+    width: 82px;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
     border-width: 2px;
-    border-radius: 10px 10px 10px 0;
+    border-radius: 12px 12px 12px 0;
     transform: rotate(-8deg);
   }
 
   .product-tag[data-tag="promoção"]::before {
-    right: -6px;
-    width: 9px;
-    height: 9px;
+    right: -7px;
+    width: 12px;
+    height: 12px;
     border-top-width: 2px;
     border-right-width: 2px;
   }
@@ -913,31 +913,6 @@ body.modal-open {
   .hero-art { width: 130px; align-self: center; }
   .topbar { padding: 16px 5vw; }
   .brand { font-size: 1.3rem; }
-
-  .product-tag[data-tag="promoção"] {
-    top: 8px;
-    left: 8px;
-    width: 52px;
-    height: 24px;
-    font-size: 0.34rem;
-    letter-spacing: 0.06em;
-    border-width: 2px;
-    border-radius: 10px 10px 10px 0;
-    transform: rotate(-8deg);
-  }
-
-  .product-tag[data-tag="promoção"]::before {
-    left: 6px;
-    width: 6px;
-    height: 6px;
-  }
-
-  .product-tag[data-tag="promoção"]::after {
-    right: 6px;
-    border-left-width: 5px;
-    border-top-width: 4px;
-    border-bottom-width: 4px;
-  }
 }
 
 @media (max-width: 460px) {
