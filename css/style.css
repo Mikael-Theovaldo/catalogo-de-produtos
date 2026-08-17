@@ -404,7 +404,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
   flex-wrap: wrap;
 }
 
-.product-price { font-family: var(--font-mono); font-weight: 600; color: #FFEB3B; font-size: 2rem; }
+.product-price {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: #FFEB3B;
+  font-size: clamp(1.15rem, 2.2vw, 2rem);
+  line-height: 1.2;
+}
 
 .btn-add {
   background: var(--paper);
@@ -477,7 +483,12 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .cart-item img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; }
 .cart-item-name { margin: 0; font-size: 0.88rem; font-weight: 500; }
-.cart-item-price { margin: 2px 0 6px; font-family: var(--font-mono); font-size: 1.2rem; color: #FFEB3B; }
+.cart-item-price {
+  margin: 2px 0 6px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  color: #FFEB3B;
+}
 
 .qty-control { display: flex; align-items: center; gap: 10px; }
 .qty-btn {
@@ -503,7 +514,11 @@ button { font-family: inherit; cursor: pointer; border: none; }
   margin-bottom: 14px;
 }
 .cart-total-row span:first-child { color: var(--paper-dim); font-size: 0.85rem; }
-.cart-total-row span:last-child { font-family: var(--font-mono); font-size: 1.8rem; color: #FFEB3B; }
+.cart-total-row span:last-child {
+  font-family: var(--font-mono);
+  font-size: clamp(1.25rem, 5vw, 1.8rem);
+  color: #FFEB3B;
+}
 
 .btn-whatsapp {
   width: 100%;
@@ -547,6 +562,23 @@ button { font-family: inherit; cursor: pointer; border: none; }
   font-size: 0.72rem;
   color: var(--paper-dim);
   text-align: center;
+}
+
+@media (max-width: 640px) {
+  .product-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-price {
+    font-size: clamp(1.1rem, 6vw, 1.7rem);
+    width: 100%;
+  }
+
+  .btn-add {
+    width: 100%;
+    min-height: 42px;
+  }
 }
 
 /* ---------- Toast: "item adicionado, finalizar pedido" ---------- */

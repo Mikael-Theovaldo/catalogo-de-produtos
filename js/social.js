@@ -20,29 +20,33 @@ function buildInstagramLink(username = INSTAGRAM_CONFIG.username) {
 }
 
 function buildInstagramDirectMessage(cartItems, total, username = INSTAGRAM_CONFIG.username) {
-  // Reutiliza a mesma formatação de mensagem do WhatsApp
+  const normalizedUsername = String(username).replace(/^@/, "");
   const lines = [];
   lines.push("Olá! Vim pelo catálogo online e quero fazer o seguinte pedido:");
   lines.push("");
   cartItems.forEach(({ product, quantity }) => {
-    const price = product.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-    const itemTotal = (product.price * quantity).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    const itemTotal = (product.price * quantity).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
     lines.push(`• ${quantity}x ${product.name} — ${itemTotal}`);
   });
   lines.push("");
-  const totalFormatted = total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-  lines.push(`Total estimado: ${totalFormatted}`);
+  lines.push(`Total estimado: ${total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`);
   lines.push("");
   lines.push("Podem confirmar disponibilidade e forma de pagamento/entrega?");
   const message = lines.join("\n");
-  
-  // Copia para a área de transferência e abre o Direct
-  navigator.clipboard.writeText(message).catch(() => {
-    // Fallback se clipboard não estiver disponível
+
+  // Copia a mensagem para a área de transferência e abre o Direct do Instagram.
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(message).catch(() => {
+      console.log("Mensagem:", message);
+    });
+  } else {
     console.log("Mensagem:", message);
-  });
-  
-  return `https://instagram.com/direct/t/${username}`;
+  }
+
+  return `https://ig.me/m/${normalizedUsername}`;
 }
 
 window.SocialLinks = { INSTAGRAM_CONFIG, buildInstagramLink, buildInstagramDirectMessage };
