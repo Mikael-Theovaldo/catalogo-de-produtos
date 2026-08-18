@@ -12,7 +12,7 @@
 
 // Troque pelo @ real do perfil da loja (sem o "@")
 const INSTAGRAM_CONFIG = {
-  username: "wm_shop001" // <-- edite aqui o usuário do Instagram
+  username: "wm_shop00" // <-- edite aqui o usuário do Instagram
 };
 
 function buildInstagramLink(username = INSTAGRAM_CONFIG.username) {
