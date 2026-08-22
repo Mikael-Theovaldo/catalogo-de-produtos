@@ -130,7 +130,7 @@ function renderProducts() {
       <div class="product-body">
         <span class="product-category">${product.category}</span>
         <h3 class="product-name">${product.name}</h3>
-        <p class="product-desc">${product.description}</p>
+        <p class="product-desc">${getProductSummary(product.description)}</p>
         <ul class="product-features">
           ${product.features.map((f) => `<li>${f}</li>`).join("")}
         </ul>
@@ -142,6 +142,15 @@ function renderProducts() {
     </article>`
     )
     .join("");
+}
+
+function getProductSummary(description) {
+  const firstSentence = description.split(/\.\s/)[0];
+  const summary = firstSentence.length > 120
+    ? `${firstSentence.slice(0, 117).trimEnd()}...`
+    : firstSentence;
+
+  return `${summary}${summary.endsWith(".") || summary.endsWith("...") ? "" : "."}`;
 }
 
 function renderCart() {
