@@ -224,44 +224,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(228, 87, 46, 0.35); }
 
-/* ---------- Animação decorativa do hero (computador) ---------- */
-
-.hero-art {
-  flex-shrink: 0;
-  width: clamp(160px, 20vw, 260px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.chip-svg { width: 100%; height: auto; overflow: visible; }
-
-@keyframes monitor-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.monitor-float { animation: monitor-float 4.5s ease-in-out infinite; transform-origin: center; }
-
-@keyframes led-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.25; }
-}
-.chip-led { animation: led-blink 1.6s ease-in-out infinite; }
-
-.screen-bar {
-  transform-box: fill-box;
-  transform-origin: bottom;
-  animation: bar-pulse 1.8s ease-in-out infinite;
-}
-@keyframes bar-pulse {
-  0%, 100% { transform: scaleY(0.4); }
-  50% { transform: scaleY(1); }
-}
-.bar1 { animation-delay: 0s; }
-.bar2 { animation-delay: 0.25s; }
-.bar3 { animation-delay: 0.5s; }
-.bar4 { animation-delay: 0.75s; }
-.bar5 { animation-delay: 0.35s; }
-
 /* ---------- Filtros ---------- */
 
 .catalog-section { padding: 2vw 6vw 8vw; }
@@ -1082,12 +1044,10 @@ body.modal-open {
 /* ---------- Responsivo ---------- */
 
 @media (max-width: 860px) {
-  .hero-art { width: clamp(110px, 26vw, 160px); }
 }
 
 @media (max-width: 640px) {
   .hero { flex-direction: column; align-items: flex-start; gap: 24px; padding: 12vw 5vw 8vw; }
-  .hero-art { width: 130px; align-self: center; }
   .topbar { padding: 16px 5vw; }
   .brand { font-size: 1.3rem; }
 }
